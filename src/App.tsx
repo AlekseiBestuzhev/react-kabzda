@@ -3,24 +3,33 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <h1>React App</h1>
+            <p>This is some text witch rendered by react</p>
+            <Block/>
+        </div>
+    );
+}
+
+function Block() {
+    return (
+        <div>
+            <Star/>
+            <Star/>
+            <Star/>
+            <Star/>
+            <Star/>
+        </div>
+    )
+}
+
+function Star() {
+    return (
+        <div>
+            Star
+        </div>
+    )
 }
 
 export default App;
