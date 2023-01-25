@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Block from "./components/Block";
 
 function App() {
     return (
@@ -11,24 +12,5 @@ function App() {
     );
 }
 
-function Block() {
-    return (
-        <div>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-        </div>
-    )
-}
-
-function Star() {
-    return (
-        <div>
-            Star
-        </div>
-    )
-}
 
 export default App;
