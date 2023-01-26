@@ -1,9 +1,13 @@
 import React from "react";
 
-function Block() {
+type BlockPropsType = {
+    title: string
+}
+
+function Block(props: BlockPropsType) {
     return (
         <div>
-            <h3>Rating</h3>
+            <h3>{props.title}</h3>
             <Star/>
             <Star/>
             <Star/>

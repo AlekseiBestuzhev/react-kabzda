@@ -10,7 +10,7 @@ function App() {
                 <h1>React App</h1>
                 <p>This is some text witch rendered by react</p>
             </div>
-            <Block/>
+            <Block title={'Episode One'}/>
             <Accordion/>
             <Block/>
             <Accordion/>
