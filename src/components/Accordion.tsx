@@ -1,10 +1,14 @@
 import React from "react";
 
-function Accordion() {
+type AccordionPropsType = {
+    body: boolean
+}
+
+function Accordion(props: AccordionPropsType) {
     return (
         <div>
             <AccordionTitle/>
-            <AccordionBody/>
+            <AccordionBody display={props.body}/>
         </div>
     )
 }
@@ -17,15 +21,22 @@ function AccordionTitle() {
     )
 }
 
-function AccordionBody() {
-    return (
-        <ul>
-            <li>Messages</li>
-            <li>Friends</li>
-            <li>Groups</li>
-            <li>Music</li>
-        </ul>
-    )
+type AccordionBodyPropsType = {
+    display: boolean
+}
+
+function AccordionBody(props: AccordionBodyPropsType) {
+    if (props.display) {
+        return (
+            <ul>
+                <li>Messages</li>
+                <li>Friends</li>
+                <li>Groups</li>
+                <li>Music</li>
+            </ul>
+        )
+    }
+    return <></>
 }
 
 
