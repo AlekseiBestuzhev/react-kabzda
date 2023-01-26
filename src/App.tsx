@@ -12,6 +12,8 @@ function App() {
             </div>
             <Block/>
             <Accordion/>
+            <Block/>
+            <Accordion/>
         </div>
     );
 }

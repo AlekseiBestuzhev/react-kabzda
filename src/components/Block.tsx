@@ -3,6 +3,7 @@ import React from "react";
 function Block() {
     return (
         <div>
+            <h3>Rating</h3>
             <Star/>
             <Star/>
             <Star/>
@@ -13,11 +14,7 @@ function Block() {
 }
 
 function Star() {
-    return (
-        <div>
-            Star
-        </div>
-    )
+    return <span>Star </span>
 }
 
 export default Block;
