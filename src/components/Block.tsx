@@ -74,8 +74,11 @@ function Block(props: BlockPropsType) {
     )
 }
 
-function Star(props: any) {
-    if (props.selected === true) return <span><b>Star</b> </span>
+type StarPropsType = {
+    selected: boolean
+}
+function Star(props: StarPropsType) {
+    if (props.selected) return <span><b>Star</b> </span>
     return <span>Star </span>
 }
 
