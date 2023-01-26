@@ -2,22 +2,80 @@ import React from "react";
 
 type BlockPropsType = {
     title: string
+    rate: number
 }
 
 function Block(props: BlockPropsType) {
+    if (props.rate === 1) {
+        return (
+            <div>
+                <h3>{props.title}</h3>
+                <Star selected={true}/>
+                <Star selected={false}/>
+                <Star selected={false}/>
+                <Star selected={false}/>
+                <Star selected={false}/>
+            </div>
+        )
+    } else if (props.rate === 2) {
+        return (
+            <div>
+                <h3>{props.title}</h3>
+                <Star selected={true}/>
+                <Star selected={true}/>
+                <Star selected={false}/>
+                <Star selected={false}/>
+                <Star selected={false}/>
+            </div>
+        )
+    } else if (props.rate === 3) {
+        return (
+            <div>
+                <h3>{props.title}</h3>
+                <Star selected={true}/>
+                <Star selected={true}/>
+                <Star selected={true}/>
+                <Star selected={false}/>
+                <Star selected={false}/>
+            </div>
+        )
+    } else if (props.rate === 4) {
+        return (
+            <div>
+                <h3>{props.title}</h3>
+                <Star selected={true}/>
+                <Star selected={true}/>
+                <Star selected={true}/>
+                <Star selected={true}/>
+                <Star selected={false}/>
+            </div>
+        )
+    } else if (props.rate === 5) {
+        return (
+            <div>
+                <h3>{props.title}</h3>
+                <Star selected={true}/>
+                <Star selected={true}/>
+                <Star selected={true}/>
+                <Star selected={true}/>
+                <Star selected={true}/>
+            </div>
+        )
+    }
     return (
         <div>
             <h3>{props.title}</h3>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
+            <Star selected={false}/>
+            <Star selected={false}/>
+            <Star selected={false}/>
+            <Star selected={false}/>
+            <Star selected={false}/>
         </div>
     )
 }
 
-function Star() {
+function Star(props: any) {
+    if (props.selected === true) return <span><b>Star</b> </span>
     return <span>Star </span>
 }
 

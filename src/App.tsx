@@ -10,9 +10,9 @@ function App() {
                 <h1>React App</h1>
                 <p>This is some text witch rendered by react</p>
             </div>
-            <Block title={'Episode One'}/>
+            <Block title={'Episode One'} rate={4}/>
             <Accordion/>
-            <Block/>
+            <Block title={'Episode Two'} rate={3}/>
             <Accordion/>
         </div>
     );
