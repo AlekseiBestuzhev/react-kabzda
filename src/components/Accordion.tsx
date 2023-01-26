@@ -16,14 +16,15 @@ function AccordionTitle() {
         </div>
     )
 }
+
 function AccordionBody() {
     return (
-            <ul>
-                <li>Messages</li>
-                <li>Friends</li>
-                <li>Groups</li>
-                <li>Music</li>
-            </ul>
+        <ul>
+            <li>Messages</li>
+            <li>Friends</li>
+            <li>Groups</li>
+            <li>Music</li>
+        </ul>
     )
 }
 
