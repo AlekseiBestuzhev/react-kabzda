@@ -11,7 +11,6 @@ function App() {
                 <p>This is some text witch rendered by react</p>
             </div>
             <Block title={'Episode One'} rate={4}/>
-            <Accordion body={false}/>
             <Block title={'Episode Two'} rate={3}/>
             <Accordion body={true}/>
         </div>
