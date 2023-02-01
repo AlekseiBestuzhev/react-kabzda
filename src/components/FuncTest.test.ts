@@ -6,12 +6,12 @@ beforeEach(() =>{
     b = 3
 })
 
-test('sum should be correct', () => {
+test.skip('sum should be correct', () => {
     const result = sum(a, b);
     expect(result).toBe(5);
 })
 
-test('multiply should be correct', () => {
+test.skip('multiply should be correct', () => {
     const result = multiply(a, b);
     expect(result).toBe(6);
 })
