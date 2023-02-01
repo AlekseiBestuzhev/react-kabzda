@@ -1,7 +1,12 @@
 import {sum} from './FuncTest';
-let a = 2;
-let b = 3;
+let a: number;
+let b: number;
+beforeEach(() =>{
+    a = 2;
+    b = 3
+})
+
 test('sum should be correct', () => {
-    const result = sum(2, 3);
+    const result = sum(a, b);
     expect(result).toBe(5);
 })
