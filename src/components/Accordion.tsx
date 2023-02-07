@@ -1,22 +1,27 @@
 import React from "react";
 
 type AccordionPropsType = {
-	body: boolean
+	body: boolean,
+	menuToggle: () => void
 }
 
 function Accordion(props: AccordionPropsType) {
 	return (
 		<div>
-			<AccordionTitle />
+			<AccordionTitle menuToggle={props.menuToggle} />
 			{props.body && <AccordionBody />}
 		</div>
 	)
 }
 
-function AccordionTitle() {
+type AccordionTitleType = {
+	menuToggle: () => void
+}
+
+function AccordionTitle(props: AccordionTitleType) {
 	return (
 		<>
-			<h3>Menu</h3>
+			<h3 onClick={() => { props.menuToggle() }}>Menu</h3>
 		</>
 	)
 }
