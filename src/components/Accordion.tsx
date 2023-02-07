@@ -21,7 +21,7 @@ type AccordionTitleType = {
 function AccordionTitle(props: AccordionTitleType) {
 	return (
 		<>
-			<h3 onClick={() => { props.menuToggle() }}>Menu</h3>
+			<h3 className="accordion-button" onClick={() => { props.menuToggle() }}>Menu</h3>
 		</>
 	)
 }
