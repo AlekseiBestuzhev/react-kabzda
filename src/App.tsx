@@ -10,6 +10,10 @@ function App() {
 		if (!list) setList(true);
 		else setList(false);
 	}
+	const [toggle, setToggle] = useState(true);
+	const changeToggle = (mode: boolean) => {
+		setToggle(mode);
+	}
 	return (
 		<div className="App">
 			<div className={'center-title'}>
@@ -19,7 +23,9 @@ function App() {
 			<Block title={'Episode One'} rate={4} />
 			<Block title={'Episode Two'} rate={2} />
 			<Accordion body={list} menuToggle={menuToggle} />
-			<Toggle turnOn={false} />
+			<Toggle
+				turnOn={toggle}
+				changeToggle={changeToggle} />
 		</div>
 	);
 }
