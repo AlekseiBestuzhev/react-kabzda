@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Block from "./components/Block";
 import Accordion from "./components/Accordion";
+import { Toggle } from './components/Toggle';
 
 function App() {
 	const [list, setList] = useState(false);
@@ -18,6 +19,7 @@ function App() {
 			<Block title={'Episode One'} rate={4} />
 			<Block title={'Episode Two'} rate={2} />
 			<Accordion body={list} menuToggle={menuToggle} />
+			<Toggle turnOn={false} />
 		</div>
 	);
 }
