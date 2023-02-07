@@ -1,19 +1,7 @@
 .on {
 	background-color: green;
-	width: 100px;
-	height: 50px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
 }
 
 .off {
 	background-color: red;
-	width: 100px;
-	height: 50px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
 }
