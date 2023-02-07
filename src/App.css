@@ -1,11 +1,11 @@
 .App {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0 50px;
 }
 
 .center-title {
-  align-self: center;
-  text-align: center;
+	align-self: center;
+	text-align: center;
 }
