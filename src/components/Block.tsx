@@ -1,20 +1,26 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { DefaultTheme } from "styled-components";
 
+declare module 'styled-components' {
+	export interface DefaultTheme {
+		fontWeight: number;
+	}
+}
 
 const Wrapper = styled.div`
 display: flex;
 column-gap: 10px;
 `
 
-const Picked = styled.span`
-font-weight: 900;
-color: #ffb300;
-
-`
-const NotPicked = styled.span`
+const Str = styled.span<DefaultTheme>`
 color: #fff700;
-font-weight: 400;
+font-weight: ${props => {
+		if (props.fontWeight === 900) {
+			return 900;
+		} else {
+			return 400;
+		}
+	}};
 `
 
 type BlockPropsType = {
@@ -40,9 +46,9 @@ function Block(props: BlockPropsType) {
 type StarPropsType = {
 	selected: boolean
 }
+
 function Star(props: StarPropsType) {
-	if (props.selected) return <Picked>Star</Picked>
-	return <NotPicked>Star</NotPicked>
+	return <Str fontWeight={props.selected === true ? 900 : 400}>Star</Str>
 }
 
 export default Block;
