@@ -1,6 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
+
+const Wrapper = styled.div`
+display: flex;
+column-gap: 10px;
+`
+
+const Picked = styled.span`
+font-weight: 900;
+color: #ffb300;
+
+`
+const NotPicked = styled.span`
+color: #fff700;
+font-weight: 400;
+`
+
 type BlockPropsType = {
 	title?: string
 	rate: number
@@ -25,12 +41,8 @@ type StarPropsType = {
 	selected: boolean
 }
 function Star(props: StarPropsType) {
-	if (props.selected) return <span><b>Star</b> </span>
-	return <span>Star </span>
+	if (props.selected) return <Picked>Star</Picked>
+	return <NotPicked>Star</NotPicked>
 }
-
-const Wrapper = styled.div`
-color: #ffb300;
-`
 
 export default Block;
