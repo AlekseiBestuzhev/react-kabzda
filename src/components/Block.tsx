@@ -1,10 +1,8 @@
 import React from "react";
-import styled, { DefaultTheme } from "styled-components";
+import styled from "styled-components";
 
-declare module 'styled-components' {
-	export interface DefaultTheme {
-		fontWeight: number;
-	}
+export type DefaultTheme = {
+	fontWeight: number
 }
 
 const Wrapper = styled.div`

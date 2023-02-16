@@ -1,0 +1,13 @@
+.star,
+.selected {
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	margin-right: 10px;
+	background: url('https://bumper-stickers.ru/44154-thickbox_default/zvezda.jpg') 50% / cover no-repeat;
+	cursor: pointer;
+}
+
+.selected {
+	background: url('https://mospraz.ru/image/catalog/new_year/podvesnie/pf-7.png') 50% / cover no-repeat;
+}
