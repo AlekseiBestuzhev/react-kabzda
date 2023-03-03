@@ -7,7 +7,7 @@ export default {
 	component: Toggle
 };
 
-export const Primary = () => {
+export const Prototype = () => {
 	// Sets the hooks for both the label and primary props
 	const [toggle, setToggle] = useState(false);
 
