@@ -1,15 +1,27 @@
 import { useState } from 'react';
 import { Toggle } from './Toggle';
 import '../../App.css'
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { action } from "@storybook/addon-actions";
+// setValue={action('Value is changed')}
+
 
 export default {
 	title: 'Toggle',
-	component: Toggle
+	component: Toggle,
+	argTypes: { changeToggle: { action: 'clicked' } }
+} as ComponentMeta<typeof Toggle>;
+
+export const ToggleComponent: ComponentStory<typeof Toggle> = () => {
+	const [toggle, setToggle] = useState<boolean>(true);
+
+	return <Toggle turnOn={toggle} changeToggle={setToggle} />
 };
 
-export const Prototype = () => {
-	// Sets the hooks for both the label and primary props
-	const [toggle, setToggle] = useState(false);
+export const TurnOff: ComponentStory<typeof Toggle> = (args) => {
+	return <Toggle {...args} turnOn={false} />;
+};
 
-	return <Toggle turnOn={toggle} changeToggle={setToggle} />;
+export const TurnOn: ComponentStory<typeof Toggle> = () => {
+	return <Toggle turnOn={true} changeToggle={action('try to change toggle value')} />;
 };
