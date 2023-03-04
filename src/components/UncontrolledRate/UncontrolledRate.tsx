@@ -5,7 +5,7 @@ type UncontrolledRateValueType = 0 | 1 | 2 | 3 | 4 | 5;
 
 type UncontrolledRateType = {
 	title: string,
-	onChange: () => void,
+	onChange: (id: UncontrolledRateValueType) => void,
 	defaultVlue?: UncontrolledRateValueType
 }
 
@@ -15,7 +15,7 @@ export const UncontrolledRate: FC<UncontrolledRateType> = ({ title, defaultVlue,
 
 	const pickStar = (id: UncontrolledRateValueType) => {
 		setRate(id);
-		onChange();
+		onChange(id);
 	}
 
 	return (
