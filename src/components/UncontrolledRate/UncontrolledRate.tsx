@@ -5,15 +5,17 @@ type UncontrolledRateValueType = 0 | 1 | 2 | 3 | 4 | 5;
 
 type UncontrolledRateType = {
 	title: string,
+	onChange: () => void,
 	defaultVlue?: UncontrolledRateValueType
 }
 
-export const UncontrolledRate: FC<UncontrolledRateType> = ({ title, defaultVlue }) => {
+export const UncontrolledRate: FC<UncontrolledRateType> = ({ title, defaultVlue, onChange }) => {
 
 	const [rate, setRate] = useState<UncontrolledRateValueType>(defaultVlue ? defaultVlue : 0);
 
 	const pickStar = (id: UncontrolledRateValueType) => {
 		setRate(id);
+		onChange();
 	}
 
 	return (

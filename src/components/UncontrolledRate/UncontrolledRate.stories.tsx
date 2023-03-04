@@ -5,6 +5,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 export default {
 	title: 'UncontrolledRate',
 	component: UncontrolledRate,
+	argTypes: { onChange: { action: 'Value was changed' } }
 } as ComponentMeta<typeof UncontrolledRate>;
 
 //👇 We create a “template” of how args map to rendering
