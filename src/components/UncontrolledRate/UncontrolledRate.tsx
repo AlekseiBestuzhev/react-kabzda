@@ -1,21 +1,24 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import cls from './UncontrolledRate.module.css'
 
+type UncontrolledRateValueType = 0 | 1 | 2 | 3 | 4 | 5;
+
 type UncontrolledRateType = {
-	title: string
+	title: string,
+	defaultVlue?: UncontrolledRateValueType
 }
 
-export const UncontrolledRate = (props: UncontrolledRateType) => {
+export const UncontrolledRate: FC<UncontrolledRateType> = ({ title, defaultVlue }) => {
 
-	const [rate, setRate] = useState(3);
+	const [rate, setRate] = useState<UncontrolledRateValueType>(defaultVlue ? defaultVlue : 0);
 
-	const pickStar = (id: number) => {
+	const pickStar = (id: UncontrolledRateValueType) => {
 		setRate(id);
 	}
 
 	return (
 		<div>
-			<h3>{props.title}</h3>
+			<h3>{title}</h3>
 			<div>
 				<Star selected={rate > 0} id={1} pickStar={pickStar} />
 				<Star selected={rate > 1} id={2} pickStar={pickStar} />
@@ -29,12 +32,11 @@ export const UncontrolledRate = (props: UncontrolledRateType) => {
 
 type StarPropsType = {
 	selected: boolean,
-	id: number,
-	pickStar: (id: number) => void
+	id: UncontrolledRateValueType,
+	pickStar: (id: UncontrolledRateValueType) => void
 }
 
 const Star = (props: StarPropsType): JSX.Element => {
-	console.log('star');
 	return (
 		<div
 			onClick={() => props.pickStar(props.id)}
