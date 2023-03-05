@@ -5,7 +5,21 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 export default {
 	title: 'UncontrolledRate',
 	component: UncontrolledRate,
-	argTypes: { onChange: { action: 'Value was changed' } }
+	argTypes: {
+		title: {
+			type: 'string',
+			description: 'The name of thing that estimate'
+		},
+		onChange: {
+			type: 'function',
+			description: 'The function which inform about new value',
+			action: 'Value was changed'
+		},
+		defaultVlue: {
+			type: 'number',
+			description: 'The value which pass outside or "0" by default'
+		}
+	}
 } as ComponentMeta<typeof UncontrolledRate>;
 
 //👇 We create a “template” of how args map to rendering

@@ -9,7 +9,16 @@ import { action } from "@storybook/addon-actions";
 export default {
 	title: 'Toggle',
 	component: Toggle,
-	argTypes: { changeToggle: { action: 'clicked' } }
+	argTypes: {
+		turnOn: {
+			type: 'boolean',
+			description: 'It\'s turn on? Value defined from outside'
+		},
+		changeToggle: {
+			description: 'Function that set new toggle value',
+			action: 'clicked'
+		}
+	}
 } as ComponentMeta<typeof Toggle>;
 
 export const ToggleComponent: ComponentStory<typeof Toggle> = () => {
