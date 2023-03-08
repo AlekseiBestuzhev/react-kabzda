@@ -1,10 +1,5 @@
-import { FC } from "react"
+import { DetailedHTMLProps, FC } from "react"
 
-type TrainInputType = {
+type TrainInputType = DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
 
-}
-
-export const TrainInput: FC<TrainInputType> = (props) => {
-
-	return <input />
-}
+export const TrainInput: FC<TrainInputType> = (props) => <input {...props} />
