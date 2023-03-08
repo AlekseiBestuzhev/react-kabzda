@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { action } from "@storybook/addon-actions";
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useRef, useState } from 'react';
 import { TrainInput } from './TrainInput';
 
 export default {
@@ -31,9 +31,30 @@ export const Controlled: ComponentStory<typeof TrainInput> = (args) => {
 	}
 
 	return (
-		<TrainInput
-			{...args}
-			value={value}
-			onChange={onChangeHandler} />
+		<>
+			<TrainInput
+				{...args}
+				value={value}
+				onChange={onChangeHandler} />
+			value - {value}
+		</>
+	)
+}
+
+export const ReferalControl: ComponentStory<typeof TrainInput> = (args) => {
+
+	const [value, setValue] = useState<string>('');
+	const valueRef = useRef<HTMLInputElement>(null);
+
+	const onClickHandler = () => {
+		const inputText = valueRef.current as HTMLInputElement;
+		setValue(inputText.value)
+	}
+	return (
+		<>
+			<input ref={valueRef} />
+			<button onClick={onClickHandler}>add</button>
+			value - {value}
+		</>
 	)
 }
