@@ -41,3 +41,9 @@ export const changeCity = (u: UserType, cityName: string) => {
 		}
 	})
 }
+export const addSkill = (u: UserType, newSkill: string) => {
+	return ({
+		...u,
+		skills: [...u.skills, newSkill]
+	})
+}

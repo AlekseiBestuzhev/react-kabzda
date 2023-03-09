@@ -136,7 +136,27 @@ test("create a copy of user and change city", () => {
 
 })
 
+test("add new skill to user", () => {
 
+	const user: UserType = {
+		name: 'Alex',
+		age: 25,
+		address: {
+			country: 'Georgia',
+			city: 'Batumi'
+		},
+		skills: ['HTML', 'CSS', 'JS'],
+		laptop: 'HP'
+	}
+
+	const userCopy = addSkill(user, 'React');
+
+	expect(userCopy).not.toBe(user);
+	expect(userCopy.skills.length).not.toBe(user.skills.length);
+	expect(userCopy.skills.length).toBe(4);
+	expect(user.skills.length).toBe(3);
+	expect(userCopy.skills[3]).toBe('React');
+})
 
 
 
