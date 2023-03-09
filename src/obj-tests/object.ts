@@ -1,3 +1,5 @@
+import {UserType} from "./object.test";
+
 type StreetType = {
 	title: string,
 	area?: string
@@ -26,4 +28,16 @@ export type CityType = {
 	houses: HouseType[],
 	governmentBuildings: govBildType[],
 	citizensNumber: number
+}
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+export const changeCity = (u: UserType, cityName: string) => {
+	return ({
+		...u,
+		address: {
+			...u.address,
+			city: cityName
+		}
+	})
 }

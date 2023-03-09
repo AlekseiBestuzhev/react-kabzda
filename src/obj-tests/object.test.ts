@@ -1,4 +1,4 @@
-import { CityType } from "./object";
+import {addSkill, changeCity, CityType} from "./object";
 
 let city: CityType;
 
@@ -99,3 +99,48 @@ test("test city should contains hospital and fire station", () => {
 	expect(city.governmentBuildings[1].staffCount).toBe(1000);
 	expect(city.governmentBuildings[1].address.street.title).toBe("South Str");
 })
+
+type AddressType = {
+	country: string,
+	city: string
+}
+
+export type UserType = {
+	name: string,
+	age: number,
+	address: AddressType,
+	skills: string[],
+	laptop: string
+}
+
+test("create a copy of user and change city", () => {
+
+	const user: UserType = {
+		name: 'Alex',
+		age: 25,
+		address: {
+			country: 'Georgia',
+			city: 'Batumi'
+		},
+		skills: ['HTML', 'CSS', 'JS'],
+		laptop: 'HP'
+	}
+
+	const userCopy = changeCity(user, 'Tbilisi');
+
+	expect(userCopy).not.toBe(user);
+	expect(userCopy.address).not.toBe(user.address);
+	expect(userCopy.address.city).toBe('Tbilisi');
+	expect(user.address.city).toBe('Batumi');
+	expect(userCopy.address.city).toBe('Tbilisi');
+
+})
+
+
+
+
+
+
+
+
+
