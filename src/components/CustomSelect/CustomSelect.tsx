@@ -27,6 +27,7 @@ export const CustomSelect: FC<CustomSelectType> = (props) => {
 			<li
 				key={index}
 				onClick={setting}
+				className={c.item}
 			>{elem.title}</li>
 		)
 	});

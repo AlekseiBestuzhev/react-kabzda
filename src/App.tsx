@@ -30,6 +30,7 @@ const App = () => {
 			if (item.value === value) setSelectedTitle(item.title);
 		}
 	}
+
 	return (
 		<div className="App">
 			<div className={'center-title'}>

@@ -9,4 +9,14 @@
 	padding: 15px;
 	background-color: blue;
 	color: red;
+	cursor: pointer;
+}
+
+.item {
+	padding: 5px 0 5px 20px;
+	cursor: pointer;
+}
+
+.item:hover {
+	background-color: #00f7ff;
 }
