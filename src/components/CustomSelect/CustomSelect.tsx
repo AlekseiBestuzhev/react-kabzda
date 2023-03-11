@@ -16,11 +16,23 @@ export const CustomSelect: FC<CustomSelectType> = (props) => {
 
 	const [show, setShow] = useState<boolean>(false);
 
-	const [selectedTitle, setSelectedTitle] = useState<string>('Select item from the list...');
+	const toggleList = () => setShow(!show);
+
+	const itemCreator = props.items.map((elem, index) => {
+		return (
+			<li
+				key={index}
+				onClick={() => props.onChange(elem.value)}
+			>{elem.title}</li>
+		)
+	});
 
 	return (
 		<div className={c.component}>
-			<div>{selectedTitle}</div>
+			<div
+				onClick={toggleList}
+				className={c.main}>{props.value}</div>
+			{show && itemCreator}
 		</div>
 	);
 }

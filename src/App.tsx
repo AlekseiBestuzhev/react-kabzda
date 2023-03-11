@@ -17,6 +17,17 @@ const App = () => {
 	const [rating, setRating] = useState<RatingValueType>(0);
 	const changeRating = (rating: RatingValueType) => setRating(rating);
 
+	const defaultArr = [
+		{ title: 'Messages', value: 1 },
+		{ title: 'Friends', value: 2 },
+		{ title: 'Groups', value: 3 },
+		{ title: 'Music', value: 4 }
+	];
+
+	const [selectedTitle, setSelectedTitle] = useState<string>('Select item from the list...');
+	const onChangeHandler = (value: any) => {
+		alert(`Choosen value is ${value}`);
+	}
 	return (
 		<div className="App">
 			<div className={'center-title'}>
@@ -25,18 +36,10 @@ const App = () => {
 			</div>
 			{/* <Block title={'Episode Two'} rate={2} /> */}
 			{/* <UncontrolledRate title='Uncontrolled' /> */}
-			{/* <Rating
-				title={'Episode One'}
-				rating={rating}
-				changeRating={changeRating} />
-			<Accordion
-				body={list}
-				menuToggle={menuToggle}
-				onClick={alert} />
-			<Toggle
-				turnOn={toggle}
-				changeToggle={changeToggle} /> */}
-			<CustomSelect onChange={() => { }} value={1} items={[]} />
+			{/* <Rating title={'Episode One'} rating={rating} changeRating={changeRating} />
+			<Accordion body={list} menuToggle={menuToggle} onClick={alert} />
+			<Toggle turnOn={toggle} changeToggle={changeToggle} /> */}
+			<CustomSelect onChange={onChangeHandler} value={selectedTitle} items={defaultArr} />
 		</div>
 	);
 }
