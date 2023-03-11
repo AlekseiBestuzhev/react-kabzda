@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { Rating, RatingValueType } from "./components/Rating";
-import Accordion from "./components/Accordion";
+import Accordion from "./components/Accordion/Accordion";
 import { Toggle } from './components/Toggle/Toggle';
 import { UncontrolledRate } from './components/UncontrolledRate/UncontrolledRate';
 
