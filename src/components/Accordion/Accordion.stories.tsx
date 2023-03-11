@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { action } from "@storybook/addon-actions";
-import { ChangeEvent, useRef, useState } from 'react';
+import { useState } from 'react';
 import Accordion from './Accordion';
 
 
@@ -8,11 +8,13 @@ export default {
 	title: 'Accordion',
 	component: Accordion,
 	argTypes: {
-		menuToggle: { action: 'Try to hide or show' }
+		menuToggle: { action: 'Try to hide or show' },
+		onClick: { action: 'You clicked on list item' }
 	}
 } as ComponentMeta<typeof Accordion>;
 
 const actionShow = action('List show or hide');
+const actionItemClick = action('You clicked on list item');
 
 const Template: ComponentStory<typeof Accordion> = (args) => <Accordion {...args} />;
 
@@ -22,11 +24,16 @@ export const Component: ComponentStory<typeof Accordion> = (args) => {
 		setBody(!body);
 		actionShow();
 	}
+	const onClickHandler = (id: number) => {
+		alert(`You clicked on item with ID: ${id}`);
+		actionItemClick();
+	}
 	return (
 		<Accordion
 			body={body}
 			menuToggle={setList}
-			title={'Click on me'} />
+			title={'Click on me'}
+			onClick={onClickHandler} />
 	)
 };
 
@@ -57,7 +64,11 @@ export const PassedItems = Template.bind({});
 PassedItems.args = {
 	body: true,
 	title: 'Items passed by props',
-	items: ['Peace', 'Door', 'Ball']
+	items: [
+		{ title: 'Peace', value: 1 },
+		{ title: 'Door', value: 2 },
+		{ title: 'Ball', value: 3 }
+	]
 };
 
 export const DefaultItems = Template.bind({});

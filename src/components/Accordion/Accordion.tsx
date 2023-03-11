@@ -1,11 +1,14 @@
-import { title } from "process";
-import React from "react";
+type ItemType = {
+	title: string,
+	value: any
+}
 
 type AccordionPropsType = {
 	title?: string,
 	body: boolean,
 	menuToggle: () => void,
-	items?: string[]
+	items?: ItemType[],
+	onClick: (value: any) => void
 }
 
 function Accordion(props: AccordionPropsType) {
@@ -14,14 +17,14 @@ function Accordion(props: AccordionPropsType) {
 			<AccordionTitle
 				title={props.title}
 				menuToggle={props.menuToggle} />
-			{props.body && <AccordionBody items={props.items} />}
+			{props.body && <AccordionBody items={props.items} onClick={props.onClick} />}
 		</div>
 	)
 }
 
 type AccordionTitleType = {
 	title?: string,
-	menuToggle: () => void
+	menuToggle: () => void,
 }
 
 function AccordionTitle(props: AccordionTitleType) {
@@ -38,16 +41,26 @@ function AccordionTitle(props: AccordionTitleType) {
 }
 
 type AccordionBodyType = {
-	items?: string[]
+	items?: ItemType[],
+	onClick: (value: any) => void
 }
 
 function AccordionBody(props: AccordionBodyType) {
 
-	const defaultArr = ['Messages', 'Friends', 'Groups', 'Music'];
+	const defaultArr = [
+		{ title: 'Messages', value: 1 },
+		{ title: 'Friends', value: 2 },
+		{ title: 'Groups', value: 3 },
+		{ title: 'Music', value: 4 }
+	];
+
 	const displayData = props.items ? props.items : defaultArr;
 	const itemCreator = displayData.map((elem, index) => {
 		return (
-			<li key={index}>{elem}</li>
+			<li
+				key={index}
+				onClick={() => props.onClick(elem.value)}
+			>{elem.title}</li>
 		)
 	})
 

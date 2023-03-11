@@ -3,7 +3,7 @@ import './App.css';
 import { Rating, RatingValueType } from "./components/Rating";
 import Accordion from "./components/Accordion/Accordion";
 import { Toggle } from './components/Toggle/Toggle';
-import { UncontrolledRate } from './components/UncontrolledRate/UncontrolledRate';
+//import { UncontrolledRate } from './components/UncontrolledRate/UncontrolledRate';
 
 const App = () => {
 
@@ -30,7 +30,8 @@ const App = () => {
 				changeRating={changeRating} />
 			<Accordion
 				body={list}
-				menuToggle={menuToggle} />
+				menuToggle={menuToggle}
+				onClick={alert} />
 			<Toggle
 				turnOn={toggle}
 				changeToggle={changeToggle} />
