@@ -3,6 +3,7 @@ import './App.css';
 import { Rating, RatingValueType } from "./components/Rating";
 import Accordion from "./components/Accordion/Accordion";
 import { Toggle } from './components/Toggle/Toggle';
+import { CustomSelect } from './components/CustomSelect/CustomSelect';
 //import { UncontrolledRate } from './components/UncontrolledRate/UncontrolledRate';
 
 const App = () => {
@@ -24,7 +25,7 @@ const App = () => {
 			</div>
 			{/* <Block title={'Episode Two'} rate={2} /> */}
 			{/* <UncontrolledRate title='Uncontrolled' /> */}
-			<Rating
+			{/* <Rating
 				title={'Episode One'}
 				rating={rating}
 				changeRating={changeRating} />
@@ -34,7 +35,8 @@ const App = () => {
 				onClick={alert} />
 			<Toggle
 				turnOn={toggle}
-				changeToggle={changeToggle} />
+				changeToggle={changeToggle} /> */}
+			<CustomSelect onChange={() => { }} value={1} items={[]} />
 		</div>
 	);
 }
