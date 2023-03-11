@@ -78,3 +78,25 @@ export const ControlledCheckbox: ComponentStory<typeof TrainInput> = (args) => {
 		</>
 	)
 }
+
+export const ControlledSelect: ComponentStory<typeof TrainInput> = (args) => {
+
+	const [value, setValue] = useState<string>('');
+	const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
+		actionShow();
+		setValue(e.currentTarget.value);
+	}
+
+	return (
+		<>
+			<select value={value} onChange={onChangeHandler}>
+				<option value='' disabled selected hidden>Select city</option>
+				<option value="1">Krasnodar</option>
+				<option value="2">Kaliningrad</option>
+				<option value="3">Ust-Labinsk</option>
+			</select>
+			Selected value's id is - {value}
+		</>
+	)
+}
+
