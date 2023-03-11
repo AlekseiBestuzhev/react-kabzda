@@ -26,7 +26,9 @@ const App = () => {
 
 	const [selectedTitle, setSelectedTitle] = useState<string>('Select item from the list...');
 	const onChangeHandler = (value: any) => {
-		alert(`Choosen value is ${value}`);
+		for (let item of defaultArr) {
+			if (item.value === value) setSelectedTitle(item.title);
+		}
 	}
 	return (
 		<div className="App">

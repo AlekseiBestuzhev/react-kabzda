@@ -19,10 +19,14 @@ export const CustomSelect: FC<CustomSelectType> = (props) => {
 	const toggleList = () => setShow(!show);
 
 	const itemCreator = props.items.map((elem, index) => {
+		const setting = () => {
+			props.onChange(elem.value);
+			toggleList();
+		}
 		return (
 			<li
 				key={index}
-				onClick={() => props.onChange(elem.value)}
+				onClick={setting}
 			>{elem.title}</li>
 		)
 	});
