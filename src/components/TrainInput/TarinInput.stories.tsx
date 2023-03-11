@@ -58,3 +58,23 @@ export const ReferalControl: ComponentStory<typeof TrainInput> = (args) => {
 		</>
 	)
 }
+
+export const ControlledCheckbox: ComponentStory<typeof TrainInput> = (args) => {
+
+	const [value, setValue] = useState<boolean>(false);
+	const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+		actionShow();
+		setValue(e.currentTarget.checked);
+	}
+
+	return (
+		<>
+			<TrainInput
+				{...args}
+				type={'checkbox'}
+				checked={value}
+				onChange={onChangeHandler} />
+			Is it checked? - {value.toString()}
+		</>
+	)
+}
