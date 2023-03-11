@@ -30,13 +30,38 @@ export const Component: ComponentStory<typeof Accordion> = (args) => {
 	)
 };
 
-export const FixedTrue = Template.bind({});
-FixedTrue.args = {
+export const FixedShowList = Template.bind({});
+FixedShowList.args = {
 	body: true,
-	title: 'Title passed by props'
+	title: 'Show list'
 };
 
-export const FixedFalse = Template.bind({});
-FixedFalse.args = {
-	body: false
+export const FixedHideList = Template.bind({});
+FixedHideList.args = {
+	body: false,
+	title: 'Hide list'
+};
+
+export const PassedTitle = Template.bind({});
+PassedTitle.args = {
+	body: true,
+	title: 'Title passed by props as previous'
+};
+
+export const DefaultTitle = Template.bind({});
+DefaultTitle.args = {
+	body: true
+};
+
+export const PassedItems = Template.bind({});
+PassedItems.args = {
+	body: true,
+	title: 'Items passed by props',
+	items: ['Peace', 'Door', 'Ball']
+};
+
+export const DefaultItems = Template.bind({});
+DefaultItems.args = {
+	body: true,
+	title: 'Using default items'
 };
